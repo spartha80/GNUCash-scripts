@@ -68,7 +68,7 @@ with open(sys.argv[1]) as f:
         mtrans = ''
         if 'withdrawl' in trans and trans['withdrawl'] > 0.0:
             mtrans = _withdrawl + str(trans['withdrawl'])
-        elif 'deposit' in trans and trans['deposit']:
+        elif 'deposit' in trans and trans['deposit'] > 0.0:
             mtrans = _deposit + str(trans['deposit'])
         _writeTransactionPartToFile(ofile, mtrans)
         desc = _description + trans['description']
